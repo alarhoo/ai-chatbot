@@ -37,6 +37,7 @@ function Mainbar({ messages, setMessages }) {
       })
 
       const data = await response.json()
+      console.log(data)
       setMessages((prev) => [...prev, { text: data.response || 'No response received.', sender: 'bot' }])
     } catch (error) {
       console.error('Error sending message:', error)
