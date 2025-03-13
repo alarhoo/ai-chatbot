@@ -3,8 +3,8 @@ import { NextResponse } from 'next/server'
 export async function POST(request) {
   try {
     const { question } = await request.json()
-    const apiKey = process.env.API_KEY
-    const apiUrl = process.env.API_URL
+    const apiKey = process.env.API_KEY || 'xrhv1OwFqVuCNxDvhpAwlirWavsXxUVkGDFeC1bG1pg'
+    const apiUrl = process.env.API_URL || 'https://chatbot-service-367407105478.asia-south1.run.app/getdatafromdocs'
 
     if (!question) {
       return NextResponse.json({ error: 'Question is required' }, { status: 400 })
